@@ -14,3 +14,10 @@ def get_random_word(library="/usr/share/dict/words"):
             good_words.append(word)
     
         return random.choice(good_words)
+
+def mask_word():
+    masked_word =""
+    for letter in word:
+        masked_word +="_"
+    return masked_word
+get_random_word()
