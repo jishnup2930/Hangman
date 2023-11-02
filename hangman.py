@@ -7,6 +7,8 @@ def get_random_word(library="/usr/share/dict/words"):
         for word in words:
             if not word.islower():
                 continue
+            if not word.isalpha():
+                continue
             good_words.append(word)
     
         return random.choice(good_words)
