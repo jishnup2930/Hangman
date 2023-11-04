@@ -36,6 +36,9 @@ def test_random_word_no_repeated_words():
     words = {hangman.get_random_word() for _ in range(10)}
     assert len(words) == 10 
 
-def test_mask_word():
-    word="apple"
-    assert hangman.get_random_word(word)
+def test_mask_word_no_guesses():
+    guesses=[]
+    word="elephant"
+    masked_word=hangman.get_mask_the_word(word,guesses)
+    assert masked_word =="--------"
+    
