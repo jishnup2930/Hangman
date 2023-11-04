@@ -59,3 +59,9 @@ def test_mask_word_one_guesses_multiple_choice():
     word='apple'
     masked_word=hangman.get_mask_the_word(word,guesses)
     assert masked_word=='-pp--'
+
+def test_mask_word_wrong_guess():
+    guesses=['j']
+    word='apple'
+    masked_word=hangman.get_mask_the_word(word,guesses)
+    assert masked_word=='-----'
