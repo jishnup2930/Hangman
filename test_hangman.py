@@ -42,13 +42,20 @@ def test_mask_word_no_guesses():
     masked_word=hangman.get_mask_the_word(word,guesses)
     assert masked_word =="--------"
     
-def test_mask_word_one_guesses():
+def test_mask_word_one_guess():
     guesses =['a']
     word = 'apple'
     masked_word=hangman.get_mask_the_word(word,guesses)
     assert masked_word =="a----"
+
 def test_mask_word_two_guesses():
     guesses=['a','e']
     word='apple'
     masked_word=hangman.get_mask_the_word(word,guesses)
     assert masked_word=='a---e'
+
+def test_mask_word_one_guesses_multiple_choice():
+    guesses=['p']
+    word='apple'
+    masked_word=hangman.get_mask_the_word(word,guesses)
+    assert masked_word=='-pp--'
