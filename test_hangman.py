@@ -66,11 +66,16 @@ def test_mask_word_wrong_guess():
     masked_word=hangman.get_mask_the_word(word,guesses)
     assert masked_word=='-----'
 
+
 def test_get_status():
     secret_word = "apple"
-    guesses=['a','p','e']
-    turns_remains=[8]
-    status= hangman.get_status(secret_word,turns_remains,guesses)
-    assert status=="""Secret word :app-e
-    Turns remainig : 8
-    Guesses son far : ape"""
+    turns_remaining = 8
+    guesses = ['a','l','e']
+    status = hangman.get_status(secret_word,
+                                 turns_remaining,
+                                 guesses,
+                                 )
+    assert status ==  """Secret word : a--le
+Turns remaining : 8
+Guesses so far : ale
+"""
