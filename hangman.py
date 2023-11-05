@@ -46,13 +46,27 @@ def play_round(secret_word, guesses, guess, turns_remaining):
             return guesses, turns_remaining, "game_over"
     return guesses, turns_remaining, "next"
 
-# def main():
-#     word = get_random_word()
-#     masked = get_mask_the_word(word)
-#     print(f"Masked word: {masked}")
+def main():
+    print ("Welcome to Hangman!")
+    print ("-------------------\n\n")
+    secret_word = get_random_word()
+    print (secret_word)
+    turns_remaining = 10
+    guesses = []
+    while True:
+        status = get_status(secret_word, turns_remaining, guesses)
+        print (status)
+        guess = input("Enter your guess ")
+        guesses, turns_remaining, next_action = play_round(secret_word, guesses, guess, turns_remaining)
+        if next_action == "game_over":
+            print (f"You lost. The word is {secret_word}")
+            break
+        if next_action == "game_won":
+            print (f"You won. The word is {secret_word}")
+            break
 
-# if __name__== "__main__":
-#     main()
-
+if __name__ == "__main__":
+    main()
+    
 
 

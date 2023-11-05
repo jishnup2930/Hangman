@@ -69,14 +69,14 @@ def test_mask_word_wrong_guess():
 
 def test_get_status():
     secret_word = "apple"
-    turns_remaining = 8
+    turns_remaining = 10
     guesses = ['a','l','e']
     status = hangman.get_status(secret_word,
                                  turns_remaining,
                                  guesses,
                                  )
     assert status ==  """Secret word : a--le
-Turns remaining : 8
+Turns remaining : 10
 Guesses so far : ale
 """
 
@@ -84,11 +84,13 @@ def test_play_round_correct_guess():
     secret_word = "apple"
     guesses = []
     guess = "e"
-    turns_remaining = 8
+    turns_remaining = 10
     guesses, turns_remaining, next_action = hangman.play_round(secret_word,
                                                                guesses,
                                                                guess,
                                                                turns_remaining)
     assert guesses == ['e']
-    assert turns_remaining == 8
+    assert turns_remaining == 10
     assert next_action == "next"
+
+
