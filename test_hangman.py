@@ -2,6 +2,7 @@ import os
 
 import hangman
 
+
 def test_random_word_lowercase():
     fname = "/tmp/sample_wordlist"
     with open(fname, "w") as f:
@@ -143,19 +144,3 @@ def test_play_round_repeated_guess():
     assert guesses == ['r', 'h']
     assert turns_remaining == 5
     assert next_action == "next"
-  
-
-
-
-# def test_guess_punctuation():
-#     secret_word = "apple"
-#     guesses = []
-#     guess = "!"
-#     turns_remaining=10
-#     game = hangman.play_round(secret_word,guess,guesses,turns_remaining)
-#     assert game.guess('!') == False  
-
-#     assert game.get_status() == """Secret word : -----
-# Turns remaining : 10
-# Guesses so far : !
-# """
